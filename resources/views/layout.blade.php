@@ -14,7 +14,8 @@
 
 <body>
     <div class="container">
-        @include ('partials.header') @include ('partials.jumbotron')
+        @include ('partials.header')
+        <!-- @include ('partials.jumbotron') -->
     </div>
 
     <main role="main" class="container">
