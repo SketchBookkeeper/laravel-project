@@ -1,19 +1,25 @@
 @extends ('layout')
 
 @section ('content')
-    @component('components.post')
-        @slot('date')
-            December 13, 2012
-        @endslot
+    @foreach($posts as $post)
+        @component('components.post')
+            @slot('id')
+                {{ $post->id }}
+            @endslot
 
-        @slot('author')
-            Chris
-        @endslot
+            @slot('date')
+                {{ $post->created_at->toFormattedDateString() }}
+            @endslot
 
-        @slot('title')
-            Post
-        @endslot
+            @slot('author')
+                Test
+            @endslot
 
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque vel aut fuga. Itaque eos fugit exercitationem maxime labore consequuntur commodi et blanditiis facilis earum sunt, illum magnam adipisci maiores quam.
-    @endcomponent
+            @slot('title')
+                {{ $post->title }}
+            @endslot
+
+            {{ $post->body }}
+        @endcomponent
+    @endforeach
 @endsection
