@@ -1,14 +1,147 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
+/* stylelint-disable selector-list-comma-newline-after */
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.blog-header {
+	border-bottom: 1px solid #E5E5E5;
+	line-height: 1;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.blog-header-logo {
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.display-4 {
+	font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+	.display-4 {
+		font-size: 3rem;
+	}
+}
+
+.nav-scroller {
+	height: 2.75rem;
+	overflow-y: hidden;
+	position: relative;
+	z-index: 2;
+}
+
+.nav-scroller .nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	margin-top: -1px;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: auto;
+	padding-bottom: 1rem;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.nav-scroller .nav-link {
+	font-size: 0.875rem;
+	padding-bottom: 0.75rem;
+	padding-top: 0.75rem;
+}
+
+.card-img-right {
+	border-radius: 0 3px 3px 0;
+	height: 100%;
+}
+
+.flex-auto {
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+}
+
+.h-250 {
+	height: 250px;
+}
+
+@media (min-width: 768px) {
+	.h-md-250 {
+		height: 250px;
+	}
+}
+
+/*
+   * Blog name and description
+   */
+
+.blog-title {
+	font-size: 2rem;
+	font-weight: 400;
+	margin-bottom: 0;
+}
+
+.blog-description {
+	color: #999999;
+	font-size: 1.1rem;
+}
+
+@media (min-width: 40em) {
+	.blog-title {
+		font-size: 3.5rem;
+	}
+}
+
+/* Pagination */
+
+.blog-pagination {
+	margin-bottom: 4rem;
+}
+
+.blog-pagination > .btn {
+	border-radius: 2rem;
+}
+
+/*
+   * Blog posts
+   */
+
+.blog-post {
+	margin-bottom: 4rem;
+}
+
+.blog-post-title {
+	font-size: 2.5rem;
+	margin-bottom: 0.25rem;
+}
+
+.blog-post-meta {
+	color: #999999;
+	margin-bottom: 1.25rem;
+}
+
+/*
+   * Footer
+   */
+
+.blog-footer {
+	background-color: #F9F9F9;
+	border-top: 0.05rem solid #E5E5E5;
+	color: #999999;
+	padding: 2.5rem 0;
+	text-align: center;
+}
+
+.blog-footer p:last-child {
+	margin-bottom: 0;
 }
