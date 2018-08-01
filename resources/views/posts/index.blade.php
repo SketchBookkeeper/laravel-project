@@ -12,7 +12,7 @@
             @endslot
 
             @slot('author')
-                Test
+                {{ $post->user->name }}
             @endslot
 
             @slot('title')
