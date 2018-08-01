@@ -1,7 +1,6 @@
 @extends ('layout')
 
 @section ('content')
-    <?php //dd($post); ?>
     <h1>{{ $post->title }}</h1>
 
     {{ $post->body }}
