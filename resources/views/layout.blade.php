@@ -25,7 +25,7 @@
             </div>
 
             <aside class="col-md-4 blog-sidebar">
-                @yield ('sidebar')
+                @include ('partials.sidebar')
             </aside>
         </div>
     </main>
