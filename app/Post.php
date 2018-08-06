@@ -47,4 +47,16 @@ class Post extends Model
             ->get()
             ->toArray();
     }
+
+    // NOTE If we need to load all posts with their tags,
+    // run App\Post::with('tags')->get() to eager load the query.
+
+    // NOTE Attach a tag to a post in many to many relationship.
+    // $post = App\Post::first();
+    // $post->tags()->attach($tag); $tag object or tag_id can be passed.
+    // detach($tag) to remove
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
