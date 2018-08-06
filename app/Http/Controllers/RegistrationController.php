@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\User;
-
 use App\Mail\Welcome;
+use App\Http\Requests\RegistrationRequest;
+
 class RegistrationController extends Controller
 {
     public function create()
@@ -14,15 +14,8 @@ class RegistrationController extends Controller
         return view('registration.create');
     }
 
-    public function store()
+    public function store(RegistrationRequest $request)
     {
-        // Validate
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed'
-        ]);
-
         // Create
         $user = User::create([
             'name' => request('name'),
