@@ -13,6 +13,14 @@
 </head>
 
 <body>
+    @if ($flash = session('message'))
+        <div class="container mt-4">
+            <div class="alert alert-primary">
+                {{ $flash }}
+            </div>
+        </div>
+    @endif
+
     <div class="container">
         @include ('partials.header')
         <!-- @include ('partials.jumbotron') -->

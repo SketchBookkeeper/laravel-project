@@ -46,6 +46,8 @@ class PostsController extends Controller
             'user_id' => auth()->id()
         ]);
 
+        session()->flash('message', request('title') . ' has been published');
+
         // Redirect user
         return redirect('/');
     }

@@ -19,9 +19,12 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function addComment($body)
+    public function addComment($body, $user_id)
     {
-        $this->comments()->create(['body' => $body]);
+        $this->comments()->create([
+            'body' => $body,
+            'user_id' => $user_id
+        ]);
         // Or we could use compact() to combine 'body' to the $body
     }
 
