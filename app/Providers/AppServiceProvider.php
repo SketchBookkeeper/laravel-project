@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('partials.sidebar', function ($view) {
             $view->with('archives', \App\Post::archives());
+            $view->with('tags', \App\Tag::has('posts')->pluck('name'));
         });
     }
 

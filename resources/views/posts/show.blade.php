@@ -3,6 +3,16 @@
 @section ('content')
     <h1>{{ $post->title }}</h1>
 
+    <div class="mb-5">
+        @if (count($post->tags))
+            @foreach ($post->tags as $tag)
+                <a href="/posts/tags/{{ $tag->name }}" class="badge badge-pill badge-primary">
+                    {{ $tag->name }}
+                </a>
+            @endforeach
+        @endif
+    </div>
+
     {{ $post->body }}
 
     <hr>
@@ -23,20 +33,22 @@
         </ul>
     </div>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <form method="POST" action="/posts/{{ $post->id }}/comments">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <textarea class="form-control" name="body" placeholder="Your Comment here" ></textarea>
-                </div>
+    @if (auth()->check())
+        <div class="card mb-3">
+            <div class="card-body">
+                <form method="POST" action="/posts/{{ $post->id }}/comments">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <textarea class="form-control" name="body" placeholder="Your Comment here" ></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <button class="btn btn-outline-primary" type="submit">Submit</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <button class="btn btn-outline-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    @endif
 
     @include ('partials.errors')
 
